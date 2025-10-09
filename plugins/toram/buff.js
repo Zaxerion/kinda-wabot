@@ -1,5 +1,5 @@
 import axios from 'axios';
-import buffList from './data/buff.js'; 
+import data from './data/buff.js'; 
 
 let handler = async (m, { text }) => {
     let input = (text || '').trim().toLowerCase();
@@ -29,7 +29,7 @@ let handler = async (m, { text }) => {
     } catch (error) {
         console.error('Error saat mengambil data buff:', error.message);
 
-        const fallback = buffList.map(line => `- ${line}`).join('\n');
+        const fallback = data.map(line => `- ${line}`).join('\n');
         await m.reply(`Buff '${input}' tidak ditemukan.\nBerikut buff yang tersedia:\n${fallback}\n-- contoh: .buff ampr --`);
     }
 };
