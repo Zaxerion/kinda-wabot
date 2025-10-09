@@ -1,5 +1,5 @@
 import axios from 'axios';
-import bagList from './data/bag.js'; 
+import data from './data/bag.js'; 
 
 let handler = async (m, { text }) => {
     const input = (text || '').trim().toLowerCase();
