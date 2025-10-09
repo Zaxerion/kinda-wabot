@@ -20,7 +20,7 @@ let handler = async (m, { text }) => {
         console.error("Error fetching or sending text:", error);
 
         if (error.response && error.response.data.status === 404) {
-            const fileList = bagList.map(line => `- ${line}`).join('\n');
+            const fileList = data.map(line => `- ${line}`).join('\n');
             await m.reply(`bahasa ${input} tidak ditemukan, berikut bahasa yang tersedia:\n${fileList}\n-- contoh: .upbag id --`);
         } else {
             await m.reply("Terjadi kesalahan saat mengambil dan mengirim teks.");
