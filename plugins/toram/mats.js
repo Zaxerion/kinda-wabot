@@ -1,12 +1,12 @@
 import axios from 'axios';
-import matsList from './data/mats.js'; 
+import data from './data/mats.js'; 
 
 let handler = async (m, { text }) => {
     const input = (text || '').trim().toLowerCase();
 
     try {
         if (input === '') {
-            const fileList = matsList.map(line => `- ${line}`).join('\n');
+            const fileList = data.map(line => `- ${line}`).join('\n');
             await m.reply(`Daftar mats:\n${fileList}\n-- contoh: .mats fauna --`);
         } else {
             const response = await axios.get(global.API("zax", "/api/toram/mats", { text: input }, "apikey"));
