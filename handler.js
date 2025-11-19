@@ -152,7 +152,7 @@ export async function handler(chatUpdate) {
 			}
 
 			if (!db.data.lid) db.data.lid = {}
-			let candidates = [m.key?.participantAlt, m.key?.participant, m.key?.remoteJidAlt, m.key?.remoteJid, m.sender].filter(Boolean)
+			let candidates = [m.key?.participantPn, m.key?.participantAlt, m.key?.participant, m.key?.remoteJidAlt, m.key?.remoteJid, m.sender, m.key?.senderPn, m.key?.senderLid].filter(Boolean)
 
 			let id = candidates.find(jid => jid.endsWith('@lid'))
 			let wa = candidates.find(jid => jid.endsWith('@s.whatsapp.net'))
